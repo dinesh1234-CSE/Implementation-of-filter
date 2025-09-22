@@ -7,42 +7,68 @@ Anaconda - Python 3.7
 
 ## Algorithm:
 ### Step1
-</br>
-</br> 
+Import the required libraries.
 
 ### Step2
-</br>
-</br> 
+
+Convert the image from BGR to RGB.
 
 ### Step3
-</br>
+</br>Apply the required filters for the image separately.
 </br> 
 
 ### Step4
 </br>
-</br> 
+</br> Plot the original and filtered image by using matplotlib.pyplot.
 
 ### Step5
-</br>
+</br>End the program.
 </br> 
 
 ## Program:
-### Developed By   :
-### Register Number:
+### Developed By   :CH.V.S.DINESH KUMAR
+### Register Number:212224040055
 </br>
 
 ### 1. Smoothing Filters
 
 i) Using Averaging Filter
 ```Python
-
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
+image1=cv2.imread("/content/dog.jpg")
+image2=cv2.cvtColor(image1,cv2.COLOR_BGR2RGB)
+kernel=np.ones((11,11),np.float32)/169
+image3=cv2.filter2D(image2,-1,kernel)
+plt.figure(figsize=(9,9))
+plt.subplot(1,2,1)
+plt.imshow(image2)
+plt.title("Original Image")
+plt.axis("off")
+plt.subplot(1,2,2)
+plt.imshow(image3)
+plt.title("Average Filter Image")
+plt.axis("off")
+plt.show()
 
 
 
 ```
 ii) Using Weighted Averaging Filter
 ```Python
-
+kernel1=np.array([[1,2,1],[2,4,2],[1,2,1]])/16
+image3=cv2.filter2D(image2,-1,kernel1)
+plt.figure(figsize=(9,9))
+plt.subplot(1,2,1)
+plt.imshow(image2)
+plt.title("Original Image")
+plt.axis("off")
+plt.subplot(1,2,2)
+plt.imshow(image3)
+plt.title("Weighted Average Filter Image")
+plt.axis("off")
+plt.show()
 
 
 
@@ -50,6 +76,18 @@ ii) Using Weighted Averaging Filter
 ```
 iii) Using Gaussian Filter
 ```Python
+gaussian_blur=cv2.GaussianBlur(image2,(33,33),0,0)
+plt.figure(figsize=(9,9))
+plt.subplot(1,2,1)
+plt.imshow(image2)
+plt.title("Original Image")
+plt.axis("off")
+plt.subplot(1,2,2)
+plt.imshow(gaussian_blur)
+plt.title("Gaussian Blur")
+plt.axis("off")
+plt.show()
+
 
 
 
@@ -59,6 +97,17 @@ iii) Using Gaussian Filter
 iv)Using Median Filter
 ```Python
 
+median=cv2.medianBlur(image2,13)
+plt.figure(figsize=(9,9))
+plt.subplot(1,2,1)
+plt.imshow(image2)
+plt.title("Original Image")
+plt.axis("off")
+plt.subplot(1,2,2)
+plt.imshow(median)
+plt.title("Median Blur")
+plt.axis("off")
+plt.show()
 
 
 
@@ -69,6 +118,19 @@ iv)Using Median Filter
 i) Using Laplacian Linear Kernal
 ```Python
 
+kernel2=np.array([[-1,-1,-1],[2,-2,1],[2,1,-1]])
+image3=cv2.filter2D(image2,-1,kernel2)
+plt.figure(figsize=(9,9))
+plt.subplot(1,2,1)
+plt.imshow(image2)
+plt.title("Original Image")
+plt.axis("off")
+plt.subplot(1,2,2)
+plt.imshow(image3)
+plt.title("Laplacian Kernel")
+plt.axis("off")
+plt.show()
+
 
 
 
@@ -78,6 +140,17 @@ ii) Using Laplacian Operator
 ```Python
 
 
+laplacian=cv2.Laplacian(image2,cv2.CV_64F)
+plt.figure(figsize=(9,9))
+plt.subplot(1,2,1)
+plt.imshow(image2)
+plt.title("Original Image")
+plt.axis("off")
+plt.subplot(1,2,2)
+plt.imshow(laplacian)
+plt.title("Laplacian Operator")
+plt.axis("off")
+plt.show()
 
 
 
@@ -90,13 +163,15 @@ ii) Using Laplacian Operator
 i) Using Averaging Filter
 </br>
 </br>
-</br>
+</br><img width="717" height="234" alt="download" src="https://github.com/user-attachments/assets/d4aa9e54-278b-4f09-a5e4-5187a9f9d88d" />
+
 </br>
 </br>
 
 ii)Using Weighted Averaging Filter
 </br>
-</br>
+</br><img width="717" height="234" alt="download" src="https://github.com/user-attachments/assets/ff4658ae-77d9-45a6-aeb4-ed69fdd60eb3" />
+
 </br>
 </br>
 </br>
@@ -104,13 +179,15 @@ ii)Using Weighted Averaging Filter
 iii)Using Gaussian Filter
 </br>
 </br>
-</br>
+<img width="717" height="234" alt="download" src="https://github.com/user-attachments/assets/2225b887-aa29-47c2-86a3-d5340afb53e5" />
+
 </br>
 </br>
 
 iv) Using Median Filter
 </br>
-</br>
+</br><img width="717" height="234" alt="download" src="https://github.com/user-attachments/assets/b5beb39d-fb0d-4dac-b44f-fc78b2cd8ba5" />
+
 </br>
 </br>
 </br>
@@ -121,13 +198,15 @@ iv) Using Median Filter
 i) Using Laplacian Kernal
 </br>
 </br>
-</br>
+</br><img width="717" height="234" alt="download" src="https://github.com/user-attachments/assets/3a5ea690-1b6e-460c-8c58-6859a4694446" />
+
 </br>
 </br>
 
 ii) Using Laplacian Operator
 </br>
-</br>
+</br><img width="717" height="234" alt="download" src="https://github.com/user-attachments/assets/d64681cc-07ba-4778-8226-ca1ab338ef47" />
+
 </br>
 </br>
 </br>
